@@ -8,7 +8,7 @@ parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, parent_dir)
 
 
-MODEL = "llama3.1"
+MODEL = "llama3.1:8b"
 
 BASE_SYSTEM_PROMPT = """
 You are Duke, an HR assistant for a group of employees.
