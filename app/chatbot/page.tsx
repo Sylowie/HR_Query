@@ -227,7 +227,7 @@ export default function ChatbotApp() {
                     borderRadius="lg"
                     boxShadow="sm"
                   >
-                    <Text>{msg.text}</Text>
+                    <Text whiteSpace="pre-wrap">{msg.text}</Text>
                   </Box>
                   <HStack
                     gap={1}

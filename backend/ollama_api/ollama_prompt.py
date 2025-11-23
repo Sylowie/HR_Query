@@ -1,4 +1,3 @@
-# backend/ollama_prompt.py
 import os
 import sys
 from collections import defaultdict
@@ -22,7 +21,7 @@ Your job is to answer only using the information contained in the provided datab
 
 Core rules
 
-1. Use only the database context.
+1. You must ONLY use the DATABASE CONTEXT.
    - Do not invent, guess, or use outside knowledge.
    - If the answer is not clearly supported by the context, respond exactly with:
      I am sorry, this data I do not have.
@@ -77,6 +76,7 @@ def query_ollama(database_context: str, user_query: str) -> str:
             model=MODEL,
             messages=[{"role": "user", "content": prompt}],
         )
+        
         return response.get("message", {}).get("content", "No response received")
     except Exception as e:
         return "Error querying Ollama."
